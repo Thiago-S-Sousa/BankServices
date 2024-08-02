@@ -1,1 +1,21 @@
-<app-login-layout-structure></app-login-layout-structure>
+<app-login-layout-structure title="Login">
+  <form [formGroup]="loginForm">
+    <label for="Email">Email</label>
+    <input
+      type="email"
+      id="Email"
+      name="Email"
+      formControlName="email"
+      placeholder="Ex. email@email.com"
+    />
+
+    <label for="Password">Password</label>
+    <input
+      type="password"
+      id="Password"
+      name="Password"
+      formControlName="password"
+      placeholder="Enter your password"
+    />
+  </form>
+</app-login-layout-structure>

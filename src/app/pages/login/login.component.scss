@@ -1,0 +1,27 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  text-align: start;
+
+  label {
+    padding-top: 2rem;
+
+    font-size: 1.4rem;
+  }
+
+  input {
+    height: 4.5rem;
+    width: 100%;
+
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #cccccc31;
+
+    font-size: 1.4rem;
+    color: #000;
+
+    padding: 1rem;
+  }
+}
