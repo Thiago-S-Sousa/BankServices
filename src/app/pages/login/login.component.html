@@ -9,6 +9,16 @@
       placeholder="Ex. email@email.com"
     />
 
+    <div
+      class="errors"
+      *ngIf="
+        (loginForm.get('email')?.errors && loginForm.get('email')?.dirty) ||
+        loginForm.get('email')?.touched
+      "
+    >
+      {{ getErrorMessageEmail("email") }}
+    </div>
+
     <label for="Password">Password</label>
     <input
       type="password"
@@ -17,5 +27,16 @@
       formControlName="password"
       placeholder="Enter your password"
     />
+
+    <div
+      class="errors"
+      *ngIf="
+        (loginForm.get('password')?.errors &&
+          loginForm.get('password')?.dirty) ||
+        loginForm.get('password')?.touched
+      "
+    >
+      {{ getErrorMessagePassword("password") }}
+    </div>
   </form>
 </app-login-layout-structure>

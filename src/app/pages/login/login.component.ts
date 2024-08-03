@@ -18,4 +18,24 @@ export class LoginComponent {
       ]),
     });
   }
+
+  getErrorMessageEmail(userEmail: string) {
+    const user = this.loginForm.get(userEmail);
+
+    if (user?.hasError('required')) {
+      return 'Enter your email';
+    }
+
+    return user?.hasError('email') ? 'Not a valid email' : '';
+  }
+
+  getErrorMessagePassword(userPassword: string) {
+    const user = this.loginForm.get(userPassword);
+
+    if (user?.hasError('required')) {
+      return 'Enter your password';
+    }
+
+    return user?.hasError('minlength') ? 'Minimum 6 characters' : '';
+  }
 }
