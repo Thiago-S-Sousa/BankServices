@@ -14,9 +14,7 @@ main {
     justify-content: center;
     flex-direction: column;
 
-    width: 30vw;
-
-    // border: solid 0.1rem red;
+    width: 90%;
   }
 
   .form-section {
@@ -67,5 +65,17 @@ main {
         cursor: pointer;
       }
     }
+  }
+}
+
+@media (min-width: 768px) {
+  main > section {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  main > section {
+    width: 30%;
   }
 }
