@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -11,7 +12,11 @@ import { UserService } from 'src/app/services/user.service';
 export class LoginComponent {
   loginForm!: FormGroup;
 
-  constructor(private router: Router, private userService: UserService) {
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private toastr: ToastrService
+  ) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
@@ -45,8 +50,8 @@ export class LoginComponent {
     this.userService
       .login(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe({
-        next: () => console.log('sucess'),
-        error: () => console.log('error'),
+        next: () => this.toastr.success('Login successfully!'),
+        error: () => this.toastr.error('Unexpected error! Try again later.'),
       });
   }
 }
