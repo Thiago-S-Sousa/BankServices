@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class LoginLayoutStructureComponent {
   @Input() title: string = '';
+  @Input() disabledBtn: boolean = true;
   @Output('submit') onSubmit = new EventEmitter();
 
   submit() {

@@ -5,7 +5,14 @@
     <ng-content></ng-content>
   </section>
   <section class="main-section">
-    <button (click)="submit()" class="submit-btn" type="submit">Login</button>
+    <button
+      (click)="submit()"
+      class="submit-btn"
+      type="submit"
+      [disabled]="disabledBtn"
+    >
+      Login
+    </button>
     <p>Problems logging in? <span>Check your data</span></p>
   </section>
 </main>

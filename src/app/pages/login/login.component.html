@@ -1,4 +1,8 @@
-<app-login-layout-structure title="Login" (submit)="submit()">
+<app-login-layout-structure
+  title="Login"
+  (submit)="submit()"
+  [disabledBtn]="!loginForm.valid"
+>
   <form [formGroup]="loginForm">
     <label for="Email">Email</label>
     <input

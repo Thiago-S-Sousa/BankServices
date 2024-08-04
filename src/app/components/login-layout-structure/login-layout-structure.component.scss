@@ -45,10 +45,18 @@ main {
       background: #3b4dee;
 
       border-radius: 0.5rem;
+
+      &:disabled {
+        opacity: 0.6;
+      }
     }
 
     .submit-btn:hover {
       cursor: pointer;
+    }
+
+    .submit-btn:disabled {
+      cursor: default;
     }
 
     p {
