@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent {
   loginForm!: FormGroup;
 
-  constructor() {
+  constructor(private router: Router, private userService: UserService) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
@@ -37,5 +39,14 @@ export class LoginComponent {
     }
 
     return user?.hasError('minlength') ? 'Minimum 6 characters' : '';
+  }
+
+  submit() {
+    this.userService
+      .login(this.loginForm.value.email, this.loginForm.value.password)
+      .subscribe({
+        next: () => console.log('sucess'),
+        error: () => console.log('error'),
+      });
   }
 }

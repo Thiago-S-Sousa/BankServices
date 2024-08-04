@@ -1,4 +1,4 @@
-<app-login-layout-structure title="Login">
+<app-login-layout-structure title="Login" (submit)="submit()">
   <form [formGroup]="loginForm">
     <label for="Email">Email</label>
     <input
