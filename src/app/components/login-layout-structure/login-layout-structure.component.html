@@ -1,7 +1,9 @@
 <main>
   <section class="form-section">
-    <h1>{{ title }}</h1>
-    <p>Hi, Welcome back. 👋</p>
+    <div class="title">
+      <h1><span>Bank</span>Services</h1>
+      <p>{{ subTitle }}</p>
+    </div>
     <ng-content></ng-content>
   </section>
   <section class="main-section">
@@ -13,6 +15,9 @@
     >
       Login
     </button>
-    <p>Problems logging in? <span>Check your data</span></p>
+    <p>
+      {{ problem
+      }}<span>{{ solution }}<fa-icon [icon]="faArrowTurnUp"></fa-icon></span>
+    </p>
   </section>
 </main>

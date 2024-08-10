@@ -13,6 +13,7 @@ main {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    gap: 2rem;
 
     width: 90%;
   }
@@ -21,14 +22,20 @@ main {
     text-align: start;
     color: #000;
 
-    h1 {
-      font-size: 3.5rem;
-      font-weight: 500;
-    }
+    .title {
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 300;
 
-    p {
-      font-size: 1.4rem;
-      padding-bottom: 2rem;
+        span {
+          font-weight: 600;
+          color: #cc2121;
+        }
+      }
+
+      p {
+        font-size: 1.4rem;
+      }
     }
   }
 
@@ -60,13 +67,16 @@ main {
     }
 
     p {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       opacity: 0.8;
-
-      padding-top: 2rem;
 
       span {
         color: #3b4dee;
+
+        fa-icon {
+          font-size: 1rem;
+          padding: 0 0.8rem;
+        }
       }
 
       span:hover {
