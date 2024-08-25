@@ -1,0 +1,74 @@
+<app-login-layout-structure
+  subTitle="Create your account"
+  problem="Already have an account? "
+  solution="Login"
+  link="/login"
+  (submit)="submit()"
+  [disabledBtn]="!signupForm.valid"
+>
+  <form [formGroup]="signupForm">
+    <label for="Name">Name</label>
+    <input
+      type="text"
+      name="Name"
+      id="Name"
+      formControlName="name"
+      placeholder="Enter your name"
+    />
+
+    <div class="errors" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+      <div *ngIf="name?.errors?.['required']">Name is required.</div>
+      <div *ngIf="name?.errors?.['minlength']">
+        Name must be at least 4 characters long.
+      </div>
+      <div *ngIf="name?.errors?.['maxlength']">
+        The name must have a maximum of 50 characters.
+      </div>
+    </div>
+
+    <label for="Email">Email</label>
+    <input
+      type="email"
+      name="Email"
+      id="Email"
+      formControlName="email"
+      placeholder="Enter your email"
+    />
+
+    <div
+      class="errors"
+      *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+    >
+      <div *ngIf="email?.errors?.['required']">Email is required.</div>
+      <div *ngIf="email?.errors?.['email']">Invalid email.</div>
+    </div>
+
+    <label for="Password">Password</label>
+    <div class="password-cto">
+      <input
+        type="password"
+        id="Password"
+        name="Password"
+        formControlName="password"
+        placeholder="Enter your password"
+      />
+
+      <input
+        type="password"
+        id="Password"
+        name="Password"
+        formControlName="password"
+        placeholder="Repeat your password "
+      />
+    </div>
+    <div
+      class="errors"
+      *ngIf="password?.invalid && (password?.dirty || password?.touched)"
+    >
+      <div *ngIf="password?.errors?.['required']">Password is required.</div>
+      <div *ngIf="password?.errors?.['minlength']">
+        Name must be at least 6 characters long.
+      </div>
+    </div>
+  </form>
+</app-login-layout-structure>
