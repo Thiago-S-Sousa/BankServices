@@ -17,7 +17,9 @@
     </button>
     <p>
       {{ problem
-      }}<span>{{ solution }}<fa-icon [icon]="faArrowTurnUp"></fa-icon></span>
+      }}<span [routerLink]="link"
+        >{{ solution }}<fa-icon [icon]="faArrowTurnUp"></fa-icon
+      ></span>
     </p>
   </section>
 </main>

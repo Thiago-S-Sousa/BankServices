@@ -10,6 +10,7 @@ export class LoginLayoutStructureComponent {
   @Input() subTitle: string = '';
   @Input() problem: string = '';
   @Input() solution: string = '';
+  @Input() link: string = '';
   @Input() disabledBtn: boolean = true;
   @Output('submit') onSubmit = new EventEmitter();
 
