@@ -43,5 +43,24 @@ export class SignupComponent {
     return this.signupForm.get('password');
   }
 
-  submit() {}
+  submit() {
+    this.userService
+      .createUser(
+        this.signupForm.value.name,
+        this.signupForm.value.email,
+        this.signupForm.value.password
+      )
+      .subscribe({
+        next: () => {
+          if (this.toastr.success('Signup successfully!')) {
+            return this.navigate();
+          }
+        },
+        error: () => this.toastr.error('Unexpected error! Try again later.'),
+      });
+  }
+
+  navigate() {
+    this.router.navigate(['/login']);
+  }
 }
