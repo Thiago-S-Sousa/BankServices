@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { UserService } from 'src/app/services/user.service';
+
+import { LoginService } from './../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent {
 
   constructor(
     private router: Router,
-    private userService: UserService,
+    private loginService: LoginService,
     private toastr: ToastrService
   ) {
     this.loginForm = new FormGroup({
@@ -47,7 +48,7 @@ export class LoginComponent {
   }
 
   submit() {
-    this.userService
+    this.loginService
       .login(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe({
         next: () => this.toastr.success('Login successfully!'),
