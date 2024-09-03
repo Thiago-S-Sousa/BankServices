@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { IUser } from './../interfaces/iuser';
 
@@ -13,14 +13,11 @@ export class UserService {
 
   constructor(private httpClient: HttpClient, private router: Router) {}
 
-  login(email: string, password: string): Observable<IUser> {
-    return this.httpClient
-      .post<IUser>(this.API + '/login', { email, password })
-      .pipe(
-        tap((value) => {
-          sessionStorage.setItem('user-token', value.token),
-            sessionStorage.setItem('user-email', value.email);
-        })
-      );
+  createUser(name: string, email: string, password: string): Observable<IUser> {
+    return this.httpClient.post<IUser>(this.API + '/login', {
+      name,
+      email,
+      password,
+    });
   }
 }
