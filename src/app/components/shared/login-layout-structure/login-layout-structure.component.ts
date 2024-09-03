@@ -13,10 +13,15 @@ export class LoginLayoutStructureComponent {
   @Input() link: string = '';
   @Input() disabledBtn: boolean = true;
   @Output('submit') onSubmit = new EventEmitter();
+  @Output('navigate') onNavigate = new EventEmitter();
 
   faArrowTurnUp = faArrowTurnUp;
 
   submit() {
     this.onSubmit.emit();
+  }
+
+  navigate() {
+    this.onNavigate.emit();
   }
 }
