@@ -1,0 +1,58 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+
+  font-family: "Poppins", sans-serif;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 10rem;
+    width: 100%;
+
+    padding: 0 2rem;
+
+    background-color: #ccc;
+
+    .title {
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 300;
+
+        span {
+          font-weight: 600;
+          color: #cc2121;
+        }
+      }
+    }
+
+    .exit > fa-icon {
+      font-size: 2rem;
+      color: #000;
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 5rem;
+    width: 100%;
+
+    span {
+      text-align: center;
+
+      pre {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
