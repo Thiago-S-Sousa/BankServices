@@ -12,6 +12,7 @@ import { LoginLayoutStructureComponent } from './components/shared/login-layout-
 import { MainComponent } from './components/shared/main/main.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     LoginLayoutStructureComponent,
     SignupComponent,
     MainComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
