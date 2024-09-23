@@ -10,9 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginLayoutStructureComponent } from './components/shared/login-layout-structure/login-layout-structure.component';
 import { MainComponent } from './components/shared/main/main.component';
-import { LoginComponent } from './pages/login/login.component';
-import { SignupComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ProductComponent } from './pages/product/product.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HomeComponent } from './pages/home/home.component';
     SignupComponent,
     MainComponent,
     HomeComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
