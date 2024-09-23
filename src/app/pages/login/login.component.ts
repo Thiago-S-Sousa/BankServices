@@ -51,8 +51,16 @@ export class LoginComponent {
     this.loginService
       .login(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe({
-        next: () => this.toastr.success('Login successfully!'),
+        next: () => {
+          if (this.toastr.success('Login successfully!')) {
+            return this.navigate();
+          }
+        },
         error: () => this.toastr.error('Unexpected error! Try again later.'),
       });
+  }
+
+  navigate() {
+    this.router.navigate(['home']);
   }
 }
