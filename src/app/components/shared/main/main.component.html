@@ -2,9 +2,27 @@
   <div class="title">
     <h1><span>Bank</span>Services</h1>
   </div>
-  <a href="" class="exit">
+  <a
+    [ngClass]="{ exit: exit, notExit: !exit }"
+    (click)="toggleNav()"
+    (click)="toggleExit()"
+  >
     <fa-icon [icon]="faArrowRightFromBracket"></fa-icon>
   </a>
+  <div [ngClass]="{ visible: openNav, notVisible: !openNav }">
+    <ul>
+      <li routerLink="home">Home</li>
+      <li routerLink="products">Products</li>
+      <li routerLink="login">Sair</li>
+      <li id="icon">
+        <fa-icon
+          [icon]="faXmark"
+          (click)="toggleNav()"
+          (click)="toggleExit()"
+        ></fa-icon>
+      </li>
+    </ul>
+  </div>
 </header>
 <main>
   <router-outlet></router-outlet>

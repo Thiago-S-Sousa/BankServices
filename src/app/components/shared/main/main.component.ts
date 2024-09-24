@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowRightFromBracket,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-main',
@@ -8,4 +11,16 @@ import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 })
 export class MainComponent {
   faArrowRightFromBracket = faArrowRightFromBracket;
+  faXmark = faXmark;
+
+  openNav: boolean = false;
+  exit: boolean = true;
+
+  toggleNav() {
+    this.openNav = !this.openNav;
+  }
+
+  toggleExit() {
+    this.exit = !this.exit;
+  }
 }

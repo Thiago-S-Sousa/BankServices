@@ -12,7 +12,7 @@
 
   padding: 0 2rem;
 
-  background-color: #ccc;
+  background-color: #eeeded;
 
   .title {
     h1 {
@@ -30,6 +30,79 @@
   fa-icon {
     font-size: 2rem;
     color: #000;
+
+    opacity: 0.7;
+    transition: 0.4s;
+  }
+
+  .exit:hover,
+  fa-icon:hover {
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.4s;
+    font-weight: 500;
+  }
+
+  .notExit {
+    display: none;
+  }
+
+  .visible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    height: 100dvh;
+    width: 90%;
+
+    background-color: #eeeded;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+
+      height: 80%;
+      width: 100%;
+
+      text-align: center;
+
+      li {
+        font-size: 1.6rem;
+        width: fit-content;
+
+        opacity: 0.6;
+        transition: 0.4s;
+      }
+
+      li:hover {
+        cursor: pointer;
+
+        opacity: 1;
+        transition: 0.4s;
+        font-weight: 500;
+      }
+
+      #icon {
+        fa-icon {
+          font-size: 2.5rem;
+        }
+
+        fa-icon:hover {
+          // cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .notVisible {
+    display: none;
   }
 }
 
@@ -48,5 +121,17 @@ footer {
   span {
     text-align: center;
     font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1024px) {
+  .header > .visible {
+    width: 25%;
+
+    ul {
+    }
   }
 }
